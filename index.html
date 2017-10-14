@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>I18n Native Web Components</title>
+    <link rel="import" href="https://raw.githubusercontent.com/jshcrowthe/wc-i18n/master/wc-i18n.html">
+    <script src="./view-json.js"></script>
+  </head>
+  <body>
+    <h1>I18n with Native Web Components</h1>
+
+    <view-json inline no-parse>loading translation</view-json> WORLD
+
+    <script type="text/javascript">
+    let viewJson = document.querySelector('view-json');
+    viewJson.addEventListener('wc-i18n-translations-loaded', function(event) { // translation load/update
+      viewJson.innerHTML = viewJson.i18n('hello');
+    });
+    </script>
+  </body>
+</html>
